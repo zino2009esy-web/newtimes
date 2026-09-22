@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFFICIAL STORE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial Black', Impact, sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Hero / Velkommen Seksjon */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000') center/cover;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            color: #e50914;
+            text-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .scroll-btn {
+            background: #111;
+            color: #fff;
+            border: 2px solid #e50914;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+            transition: 0.3s;
+        }
+
+        .scroll-btn:hover {
+            background: #e50914;
+            color: #000;
+        }
+
+        /* Meny Seksjon */
+        .shop-container {
+            min-height: 100vh;
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .shop-header {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #151515;
+            border: 1px solid #222;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #e50914;
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .card .price {
+            font-size: 1.5rem;
+            color: #2ecc71;
+            margin-bottom: 15px;
+        }
+
+        .buy-btn {
+            background: #222;
+            color: #fff;
+            border: 1px solid #444;
+            width: 100%;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .buy-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Seksjon 1: Velkommen -->
+    <section class="hero">
+        <h1>VELKOMMEN 💸💨</h1>
+        <p>Ekte kvalitet. Velg mengde under.</p>
+        <button class="scroll-btn" onclick="scrollToShop()">Trykk for å bla ned 👇</button>
+    </section>
+
+    <!-- Seksjon 2: Meny -->
+    <section class="shop-container" id="shop">
+        <h2 class="shop-header">MENY 🍃💰</h2>
+        
+        <div class="items-grid">
+            <div class="card">
+                <h3>1g Blader 🍃</h3>
+                <div class="price">100 kr</div>
+                <button class="buy-btn" onclick="selectItem('1g Blader', 100)">Velg</button>
+            </div>
+
+            <div class="card">
+                <h3>5g Blader 🍃</h3>
+                <div class="price">450 kr</div>
+                <button class="buy-btn" onclick="selectItem('5g Blader', 450)">Velg</button>
+            </div>
+
+            <div class="card">
+                <h3>10g Blader 🍃</h3>
+                <div class="price">700 kr</div>
+                <button class="buy-btn" onclick="selectItem('10g Blader', 700)">Velg</button>
+            </div>
+
+            <div class="card">
+                <h3>100g Blader 🍃</h3>
+                <div class="price">7000 kr</div>
+                <button class="buy-btn" onclick="selectItem('100g Blader', 7000)">Velg</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function scrollToShop() {
+            document.getElementById('shop').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        function selectItem(name, price) {
+            alert('Du valgte: ' + name + ' for ' + price + ' kr');
+        }
+    </script>
+</body>
+</html>
